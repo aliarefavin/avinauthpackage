@@ -1,6 +1,6 @@
 <?php
 
-namespace Interfaces;
+namespace AliArefAvin\AvinAuthPackage\Contracts;
 
 interface AvinAuthInterface
 {

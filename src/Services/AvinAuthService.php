@@ -1,14 +1,13 @@
 <?php
 
-namespace Services;
+namespace AliArefAvin\AvinAuthPackage\Services;
 
-use App\Core\Interfaces\AvinAuthInterface;
+use AliArefAvin\AvinAuthPackage\Contracts\AvinAuthInterface;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use Exception;
 use Illuminate\Support\Facades\Session;
-use SanjabVerify\Models\VerifyLog;
 use function App\Services\Auth\config;
 use function App\Services\Auth\now;
 use function App\Services\Auth\request;

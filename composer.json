@@ -1,37 +1,44 @@
 {
     "name": "aliarefavin/avinauthpackage",
     "description": "Custom authentication system for Laravel",
+    "homepage": "https://github.com/aliarefavin/avinauthpackage",
     "keywords": [
         "laravel",
         "Laravel",
         "laravel tools",
-        "array",
-        "array filter",
-        "Array Filter",
-        "laravel array filter",
-        "laravel filter",
-        "array-filter",
-        "dynamic-filters",
-        "search",
-        "query",
-        "filter",
-        "laravel filter multiple parameters"
+        "auth",
+        "authentication",
+        "one time password",
+        "opt",
+        "verify",
+        "verification",
+        "validation",
+        "authenticate",
+        "avin",
+        "avinmedia",
+        "avintech",
+        "aliaref"
+    ],
+    "authors": [
+        {
+            "name": "amir arefzadeh",
+            "email": "aliarefzadeh1999@gmail.com",
+            "role": "Developer"
+        }
     ],
     "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "AliAref\\ArrayFilterable\\": "packages/aliarefzadeh/array-filterable/src/"
+            "AliArefAvin\\AvinAuthPackage\\": "src/"
         }
     },
     "autoload-dev": {},
     "extra": {
         "laravel": {
             "providers": [
-                "AliAref\\ArrayFilterable\\ArrayFilterableServiceProvider"
-            ],
-            "aliases": {
-                "ArrayHandler": "AliAref\\ArrayFilterable\\Facades\\ArrayHandler"
-            }
+                "AliArefAvin\\AvinAuthPackage\\AvinAuthServiceProvider"
+            ]
         }
     },
     "require": {
@@ -46,5 +53,13 @@
         "orchestra/testbench": "5.*|^6.0|^6.6.0|^7.0.0|^8.0.0|v9.0.0",
         "mockery/mockery": "1.4.x-dev|1.4.2|1.5.1|^1.6",
         "phpstan/phpstan": "^1.8"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+
+    "scripts": {
+        "post-autoload-dump": [
+            "@php artisan package:discover --ansi"
+        ]
     }
 }

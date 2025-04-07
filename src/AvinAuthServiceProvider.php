@@ -1,6 +1,8 @@
 <?php
+namespace AliArefAvin\AvinAuthPackage;
 
-use App\Services\Auth\AvinAuthService;
+use AliArefAvin\AvinAuthPackage\Contracts\AvinAuthInterface;
+use AliArefAvin\AvinAuthPackage\Services\AvinAuthService;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Validator;
 
@@ -11,6 +13,8 @@ class AvinAuthServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/config/avinauthconfig.php', 'avinauthconfig.php');
+        $this->app->bind(AvinAuthInterface::class, AvinAuthService::class);
+
     }
     public function boot()
     {
@@ -19,7 +23,7 @@ class AvinAuthServiceProvider
         $this->publishes([
             __DIR__.'/config/avinauthconfig.php' => config_path('avinauthconfig.php'),
             __DIR__.'/database/migrations/' => database_path('migrations'),
-        ], 'avinauthpackage');
+        ], 'avinauth-config');
 
 
         // Load migrations automatically (optional)
