@@ -5,8 +5,9 @@ use AliArefAvin\AvinAuthPackage\Contracts\AvinAuthInterface;
 use AliArefAvin\AvinAuthPackage\Services\AvinAuthService;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\ServiceProvider;
 
-class AvinAuthServiceProvider
+class AvinAuthServiceProvider extends ServiceProvider
 {
 
 
