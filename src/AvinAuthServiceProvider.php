@@ -22,8 +22,7 @@ class AvinAuthServiceProvider extends ServiceProvider
         // Publish config
         // Publish migrations
         $this->publishes([
-            __DIR__.'/config/avinauthconfig.php' => config_path('avinauthconfig'),
-            __DIR__.'/database/migrations/' => database_path('migrations'),
+            __DIR__.'/config/avinauthconfig.php' => config_path('avinauthconfig.php'),
         ], 'avinauth-config');
 
 

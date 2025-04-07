@@ -58,8 +58,11 @@
     "prefer-stable": true,
 
     "scripts": {
-        "post-autoload-dump": [
-            "@php artisan package:discover --ansi"
+        "post-install-cmd": [
+            "php artisan vendor:publish --tag=avinauth-config --force"
+        ],
+        "post-update-cmd": [
+            "php artisan vendor:publish --tag=avinauth-config --force"
         ]
     }
 }
