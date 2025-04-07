@@ -13,7 +13,7 @@ class AvinAuthServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/config/avinauthconfig.php', 'avinauthconfig.php');
+        $this->mergeConfigFrom(__DIR__.'/config/avinauthconfig.php', 'avinauthconfig');
         $this->app->bind(AvinAuthInterface::class, AvinAuthService::class);
 
     }
