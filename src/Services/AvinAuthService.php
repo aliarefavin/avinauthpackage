@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use Exception;
 use Illuminate\Support\Facades\Session;
-use function App\Services\Auth\config;
-use function App\Services\Auth\now;
-use function App\Services\Auth\request;
+
 
 
 /**
