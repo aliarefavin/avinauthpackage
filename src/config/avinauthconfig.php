@@ -3,6 +3,9 @@ return [
 
     'prefix' => 'avinauth',
 
+    'sms_mode' => env('SMS_MODE', 'Production'),
+
+
     /*
     |--------------------------------------------------------------------------
     | determine the connection: redis or database

@@ -3,7 +3,6 @@
 
 </div>
 
-</div>
 
 Verify your user mobile/email with a one-time password using both `Redis` and `Mysql Database`.
 
@@ -13,6 +12,9 @@ You can install the package via composer:
 
 ```bash
 composer require aliarefavin/avinauthpackage
+```
+```bash
+php artisan migrate
 ```
 
 Publish config file using:
@@ -27,7 +29,7 @@ Configuration is located at config/avinauthconfig.php. Here's what you can adjus
 `connection`: you can set your connection to redis or database as you wish
 
 > Note: The default connection is `redis` and we recommend to keep it that way specially for large scale projects.
-> If you are not using redis on your project and want to use `database` connection make sure to run `php artisan migrate` after installing the project. 
+> If you are not using redis on your project and want to use `database` connection make sure to run `php artisan migrate` after installing the package. 
 
 
 `code`: OTP code generation rules.

@@ -49,6 +49,10 @@ class AvinAuthService
 
     public function databaseVerify($receiver, $code, $ip, $userAgent)
     {
+
+        if (config('avinauthconfig.sms_mode') == 'Local' && $code == 0000) {
+            return ['success' => true, 'message' => 'کد شما با موفقیت تایید شد.'];
+        }
         $log = DB::table('avin_logs')->where('receiver', $receiver)->latest()->first();
         if ($log == null || Carbon::parse($log->created_at)->diffInSeconds() > config('avinauthconfig.resend_delay')) {
             return [
@@ -94,6 +98,11 @@ class AvinAuthService
 
     public function redisVerify($receiver, $code, $ip, $userAgent)
     {
+
+        if (config('avinauthconfig.sms_mode') == 'Local' && $code == 0000) {
+            return ['success' => true, 'message' => 'کد شما با موفقیت تایید شد.'];
+        }
+
         $key = config('avinauthconfig.prefix') . '_' . $receiver;
         $maxAttempts = config('avinauthconfig.max_attempts');
         $logs = json_decode(Redis::get($key), true);
