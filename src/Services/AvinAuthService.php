@@ -57,7 +57,7 @@ class AvinAuthService
         if ($log == null || Carbon::parse($log->created_at)->diffInSeconds() > config('avinauthconfig.resend_delay')) {
             return [
                 'success' => false,
-                'message' => 'کد شما منقضی شده است, لطفا مجدادا درخواست بدهید.'
+                'message' => 'کد شما منقضی شده است, لطفا مجددا درخواست بدهید.'
             ];
         }
         if ($log->count > config('avinauthconfig.max_attempts')) {
@@ -118,7 +118,7 @@ class AvinAuthService
                 if ($logs['status'] == 'active') {
                     return [
                         'success' => false,
-                        'message' => 'کد شما منقضی شده است, لطفا مجدادا درخواست بدهید.'
+                        'message' => 'کد شما منقضی شده است, لطفا مجددا درخواست بدهید.'
                     ];
                 }
             }
@@ -156,12 +156,12 @@ class AvinAuthService
             }
             return [
                 'success' => false,
-                'message' => 'کد شما منقضی شده است, لطفا مجدادا درخواست بدهید.'
+                'message' => 'کد شما منقضی شده است, لطفا مجددا درخواست بدهید.'
             ];
         }
         return [
             'success' => false,
-            'message' => 'کد شما منقضی شده است, لطفا مجدادا درخواست بدهید.'
+            'message' => 'کد شما منقضی شده است, لطفا مجددا درخواست بدهید.'
         ];
     }
 
